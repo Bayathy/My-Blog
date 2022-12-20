@@ -1,0 +1,55 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":timezone(Asia/Tokyo)",
+    ":label(renovate)",
+    ":semanticCommitScopeDisabled"
+  ],
+  "labels": ["dependencies", "renovate"],
+  "schedule": [
+    "every weekend"
+  ],
+  "dependencyDashboard": true,
+  "npm": {
+    "extends": [
+      ":noUnscheduledUpdates",
+      "npm:unpublishSafe",
+      "helpers:disableTypesNodeMajor"
+    ],
+    "rangeStrategy": "bump",
+    "semanticCommitType": "chore",
+    "separateMinorPatch": true,
+    "packageRules": [
+      {
+        "matchDepTypes": [
+          "devDependencies"
+        ],
+        "matchUpdateTypes": [
+          "patch"
+        ],
+        "automerge": true
+      },
+      {
+        "groupName": "ESLint and Prettier",
+        "matchPackageNames": [
+          "eslint",
+          "prettier"
+        ],
+        "matchPackagePatterns": [
+          "^eslint-",
+          "^prettier-"
+        ],
+        "automerge": true
+      },
+      {
+        "groupName": "types",
+        "packagePatterns": ["^@types/"],
+        "automerge": true,
+        "major": {
+          "automerge": false
+        }
+      }
+    ]
+  }
+}

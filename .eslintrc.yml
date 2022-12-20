@@ -1,0 +1,22 @@
+env:
+  browser: true
+  node: true
+extends:
+  - bayathy
+  - plugin:tailwindcss/recommended
+
+plugins:
+  - tailwindcss
+
+settings:
+  "tailwindcss":
+    "calls": ["css"]
+    "tags": ["tw"]
+
+parser: '@typescript-eslint/parser'
+parserOptions:
+  project: ./tsconfig.json
+
+rules:
+  "import/no-unresolved": off
+  "unicorn/prevent-abbreviations": off

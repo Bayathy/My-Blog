@@ -4,7 +4,6 @@ env:
 extends:
   - bayathy
   - plugin:tailwindcss/recommended
-
 plugins:
   - tailwindcss
 
@@ -16,6 +15,8 @@ settings:
 parser: '@typescript-eslint/parser'
 parserOptions:
   project: ./tsconfig.json
+  ecmaFeatures:
+    jsx: true
 
 rules:
   "import/no-unresolved": off

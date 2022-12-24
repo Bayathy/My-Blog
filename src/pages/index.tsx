@@ -6,6 +6,7 @@ import type { NextPageWithLayout } from "./_app";
 const Home: NextPageWithLayout = () => {
   return (
     <>
+      <button onClick={() => fetch("/api/article")}>test</button>
       <p css={tw`text-3xl`}>Hello!</p>
     </>
   );

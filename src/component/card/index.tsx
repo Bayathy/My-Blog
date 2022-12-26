@@ -4,24 +4,35 @@ import Link from "next/link";
 
 export type ArticleCardProps = {
   title: string;
-  created_at: string;
-  description: string;
+  created_at: Date;
   href: string;
+  tag: Array<string>;
 };
 
 export const ArticleCard: FC<ArticleCardProps> = ({
   title,
   created_at,
-  description,
   href,
+  tag,
 }) => (
   <div
-    css={tw`relative flex w-full flex-col gap-4 rounded-md bg-extra-light p-4 text-white shadow-md dark:bg-extra-dark`}
+    css={tw`relative flex flex-col gap-4 rounded-md bg-extra-light p-4 text-white shadow-md dark:bg-extra-dark`}
   >
-    <h1 css={tw`text-2xl`}>{title}</h1>
-    <p>{description}</p>
+    <h1 css={tw`text-xl`}>{title}</h1>
+    <div css={tw`flex gap-2 leading-3`}>
+      {tag.map((index, key) => (
+        <span
+          key={key}
+          css={tw`rounded-xl bg-secondary-light px-2 py-1 text-black`}
+        >
+          {index}
+        </span>
+      ))}
+    </div>
     <div css={tw`flex items-center justify-between`}>
-      <p>{created_at}</p>
+      <p>{`${created_at.getFullYear()}/${
+        created_at.getMonth() + 1
+      }/${created_at.getDate()}`}</p>
       <div
         css={tw`w-max rounded-xl bg-secondary-light px-4 py-2 text-black shadow-md dark:bg-secondary-dark dark:text-white`}
       >

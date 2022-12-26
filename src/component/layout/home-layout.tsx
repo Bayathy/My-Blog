@@ -11,10 +11,11 @@ export const HomeLayout: FC<PropsWithChildren> = ({ children }) => (
       grid-template-rows: auto 1fr auto;
       grid-template-columns: 100%;
       min-height: 100vh;
+      width: 100%;
     `}
   >
     <Header />
-    <main css={tw`m-auto max-w-3xl`}>{children}</main>
+    <main css={tw`m-auto w-full max-w-3xl px-16`}>{children}</main>
     <Footer />
   </div>
 );

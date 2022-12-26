@@ -23,7 +23,7 @@ export const ArticleCard: FC<ArticleCardProps> = ({
       {tag.map((index, key) => (
         <span
           key={key}
-          css={tw`rounded-xl bg-secondary-light px-2 py-1 text-black`}
+          css={tw`rounded-xl bg-secondary-dark px-4 py-1 text-sm text-white`}
         >
           {index}
         </span>
@@ -34,7 +34,7 @@ export const ArticleCard: FC<ArticleCardProps> = ({
         created_at.getMonth() + 1
       }/${created_at.getDate()}`}</p>
       <div
-        css={tw`w-max rounded-xl bg-secondary-light px-4 py-2 text-black shadow-md dark:bg-secondary-dark dark:text-white`}
+        css={tw`w-max rounded-xl bg-secondary-dark px-4 py-2 text-white shadow-md dark:bg-secondary-dark dark:text-white`}
       >
         <Link href={href}>Read More</Link>
       </div>

@@ -15,7 +15,9 @@ export const HomeLayout: FC<PropsWithChildren> = ({ children }) => (
     `}
   >
     <Header />
-    <main css={tw`m-auto w-full max-w-3xl px-16`}>{children}</main>
+    <main css={tw`m-auto my-24 w-full max-w-3xl px-6  md:px-16`}>
+      {children}
+    </main>
     <Footer />
   </div>
 );

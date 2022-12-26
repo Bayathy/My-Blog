@@ -5,6 +5,7 @@ export type GetListRes = {
     body: string;
     createdAt: Date;
     id: string;
+    tag: Array<string>;
     title: string;
   }>;
 };

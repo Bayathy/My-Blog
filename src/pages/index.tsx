@@ -5,6 +5,7 @@ import type { GetStaticProps } from "next";
 import { getPostList } from "../utils/cms/get-post-list";
 import { GetArticleRes } from "../utils/cms/get-article";
 import { ArticleCard } from "../component/card";
+import tw from "twin.macro";
 
 type HomeProps = {
   list: Array<GetArticleRes>;
@@ -22,7 +23,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 // eslint-disable-next-line react/prop-types
 const Home: NextPageWithLayout<HomeProps> = ({ list }) => {
   return (
-    <>
+    <div css={tw`flex w-full flex-col gap-4`}>
       {/* eslint-disable-next-line react/prop-types */}
       {list.map(({ title, tag, createdAt, id }) => (
         <ArticleCard
@@ -33,7 +34,7 @@ const Home: NextPageWithLayout<HomeProps> = ({ list }) => {
           tag={tag}
         />
       ))}
-    </>
+    </div>
   );
 };
 

@@ -1,13 +1,8 @@
 import { client } from "./init";
+import { GetArticleRes } from "./get-article";
 
 export type GetListRes = {
-  contents: Array<{
-    body: string;
-    createdAt: Date;
-    id: string;
-    tag: Array<string>;
-    title: string;
-  }>;
+  contents: Array<GetArticleRes>;
 };
 export const getPostList = async (): Promise<GetListRes> => {
   const list = await client.get<GetListRes>({ endpoint: "blog" });

@@ -2,7 +2,7 @@ import { client } from "./init";
 
 export type GetArticleRes = {
   body: string;
-  createdAt: Date;
+  createdAt: string;
   id: string;
   tag: Array<string>;
   title: string;

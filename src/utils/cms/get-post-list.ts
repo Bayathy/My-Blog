@@ -8,5 +8,5 @@ type GetListRes = {
 export const getPostList = async (): Promise<Array<GetArticleRes>> => {
   const list = await client.get<GetListRes>({ endpoint: "blog" });
   list.contents.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
-  return list.contents
+  return list.contents;
 };

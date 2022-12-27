@@ -2,7 +2,7 @@ import type { ReactElement } from "react";
 import { HomeLayout } from "../component/layout/home-layout";
 import type { NextPageWithLayout } from "./_app";
 import type { GetStaticProps, InferGetStaticPropsType } from "next";
-import { getAllPaths, getPostList } from "../utils/cms/get-post-list";
+import { getPostList } from "../utils/cms/get-post-list";
 import { GetArticleRes } from "../utils/cms/get-article";
 import { ArticleCard } from "../component/card";
 import tw from "twin.macro";
@@ -37,13 +37,6 @@ const Home: NextPageWithLayout<StaticHomePageProps> = ({ list }) => {
           tag={tag}
         />
       ))}
-      <button
-        onClick={async () =>
-          await getAllPaths().then((res) => console.log(res))
-        }
-      >
-        test
-      </button>
     </div>
   );
 };

@@ -21,3 +21,4 @@ parserOptions:
 rules:
   "import/no-unresolved": off
   "unicorn/prevent-abbreviations": off
+  "react/prop-types": off

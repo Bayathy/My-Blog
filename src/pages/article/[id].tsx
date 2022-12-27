@@ -1,9 +1,13 @@
-import type { GetStaticPaths, GetStaticProps } from "next";
-import { InferGetStaticPropsType } from "next";
+import type {
+  GetStaticPaths,
+  GetStaticProps,
+  InferGetStaticPropsType,
+} from "next";
+import {} from "next";
 import { getAllPaths } from "../../utils/cms/get-post-list";
 import { getArticle, GetArticleRes } from "../../utils/cms/get-article";
-import { NextPageWithLayout } from "../_app";
-import { ReactElement } from "react";
+import type { NextPageWithLayout } from "../_app";
+import type { ReactElement } from "react";
 import { ArticleLayout } from "../../component/layout/article-layout";
 import tw from "twin.macro";
 import { css } from "@emotion/react";

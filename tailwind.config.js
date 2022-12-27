@@ -4,15 +4,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "primary-light": "#F2D7D9",
-        "secondary-light": "#D3CEDF",
-        "extra-light": "#9CB4CC",
-        "primary-dark": "#0A2647",
-        "secondary-dark": "#144272",
-        "extra-dark": "#2C74B3"
-      },  
+        "primary-light": "#cbc8e6",
+        "secondary-light": "#9cc9e5",
+        "extra-light": "#e1e7eb",
+        "primary-dark": "#282A3A",
+        "secondary-dark": "#735F32",
+        "extra-dark": "#C69749",
+      },
     },
   },
   darkMode: "class",
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

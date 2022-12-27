@@ -1,11 +1,10 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import tw from "twin.macro";
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="ja">
       <Head />
-      <body css={tw`dark:bg-secondary-dark`}>
+      <body>
         <Main />
         <NextScript />
       </body>

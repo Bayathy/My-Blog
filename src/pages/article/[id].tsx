@@ -47,7 +47,7 @@ const Article: NextPageWithLayout<StaticArticlePageProps> = ({ data }) => (
       <p css={tw`text-xl leading-none`}>{data.createdAt.slice(0, -14)}</p>
       <h1 css={tw`m-0 text-2xl leading-none`}>{data.title}</h1>
       <div
-        css={tw`mb-2 w-max rounded-lg bg-secondary-light p-2 leading-none dark:bg-extra-dark`}
+        css={tw`mb-2 w-max rounded-lg bg-secondary-light p-2 leading-none dark:bg-secondary-dark`}
       >
         <p css={tw`m-0`}>{data.tag}</p>
       </div>

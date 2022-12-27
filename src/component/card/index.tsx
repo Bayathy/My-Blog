@@ -16,7 +16,7 @@ export const ArticleCard: FC<ArticleCardProps> = ({
   tag,
 }) => (
   <div
-    css={tw`relative flex flex-col gap-4 rounded-md border-2 bg-white p-4 shadow-md dark:border-none dark:bg-black dark:text-gray-300`}
+    css={tw`relative flex flex-col gap-4 rounded-md border-2 bg-white p-4 shadow-md dark:border-none dark:bg-primary-dark dark:text-gray-300`}
   >
     <h1 css={tw`text-xl`}>
       <Link href={`/article/${href}`}>{title}</Link>

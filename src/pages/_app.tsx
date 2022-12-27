@@ -8,7 +8,7 @@ import { Header } from "../component/header";
 import tw from "twin.macro";
 import { Footer } from "../component/footer";
 import { DefaultSeo } from "next-seo";
-import SEO from "../next-seo.config";
+import SEO from "../../next-seo.config";
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -25,8 +25,8 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   return getLayout(
     <>
       <Head>
-        <title>Bayathy BLog</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <GlobalStyles />
       <DefaultSeo {...SEO} />

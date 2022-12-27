@@ -43,16 +43,6 @@ export default (req: NextRequest) => {
             }}
           >
             {title}
-            <div
-              style={{
-                position: "absolute",
-                bottom: 10,
-                left: 10,
-                fontSize: "40px",
-              }}
-            >
-              @Bayathy
-            </div>
           </div>
         </div>
       ),

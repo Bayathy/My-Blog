@@ -36,7 +36,7 @@ export const ArticleCard: FC<ArticleCardProps> = ({
       <div
         css={tw`w-max rounded-xl bg-secondary-dark px-4 py-2 text-white shadow-md dark:bg-secondary-dark dark:text-white`}
       >
-        <Link href={href}>Read More</Link>
+        <Link href={`/article/${href}`}>Read More</Link>
       </div>
     </div>
   </div>

@@ -6,8 +6,6 @@ import type {
 import { getAllPaths } from "../../utils/cms/get-post-list";
 import { getArticle, GetArticleRes } from "../../utils/cms/get-article";
 import type { NextPageWithLayout } from "../_app";
-import type { ReactElement } from "react";
-import { ArticleLayout } from "../../component/layout/article-layout";
 import tw from "twin.macro";
 import { css } from "@emotion/react";
 
@@ -42,10 +40,17 @@ export const getStaticProps: GetStaticProps<ArticlePageProps> = async ({
 };
 
 const Article: NextPageWithLayout<StaticArticlePageProps> = ({ data }) => (
-  <article>
-    <div css={tw`flex flex-col gap-2 dark:text-white`}>
-      <h1 css={tw`text-2xl`}>{data.title}</h1>
-      <p>{data.createdAt.slice(0, -14)}</p>
+  <article css={tw`prose-sm`}>
+    <div
+      css={tw`flex flex-col gap-4 border-b-2 border-black dark:border-white dark:text-white`}
+    >
+      <p css={tw`text-xl leading-none`}>{data.createdAt.slice(0, -14)}</p>
+      <h1 css={tw`m-0 leading-none`}>{data.title}</h1>
+      <div
+        css={tw`mb-2 w-max rounded-lg bg-secondary-light p-2 leading-none dark:bg-extra-dark`}
+      >
+        <p css={tw`m-0`}>{data.tag}</p>
+      </div>
     </div>
     <div
       css={[
@@ -59,10 +64,6 @@ const Article: NextPageWithLayout<StaticArticlePageProps> = ({ data }) => (
       }}
     />
   </article>
-);
-
-Article.getLayout = (page: ReactElement) => (
-  <ArticleLayout>{page}</ArticleLayout>
 );
 
 export default Article;

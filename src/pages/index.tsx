@@ -1,5 +1,3 @@
-import type { ReactElement } from "react";
-import { HomeLayout } from "../component/layout/home-layout";
 import type { NextPageWithLayout } from "./_app";
 import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import { getPostList } from "../utils/cms/get-post-list";
@@ -40,7 +38,5 @@ const Home: NextPageWithLayout<StaticHomePageProps> = ({ list }) => {
     </div>
   );
 };
-
-Home.getLayout = (page: ReactElement) => <HomeLayout>{page}</HomeLayout>;
 
 export default Home;

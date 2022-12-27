@@ -4,15 +4,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "primary-light": "#F2D7D9",
-        "secondary-light": "#D3CEDF",
-        "extra-light": "#9CB4CC",
+        "primary-light": "#cbc8e6",
+        "secondary-light": "#9cc9e5",
+        "extra-light": "#e1e7eb",
         "primary-dark": "#0A2647",
         "secondary-dark": "#144272",
-        "extra-dark": "#2C74B3"
-      },  
+        "extra-dark": "#2C74B3",
+      },
+      fontFamily: {
+        sawarabi: ["var(--font-sawarabi)"],
+      },
     },
   },
   darkMode: "class",
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

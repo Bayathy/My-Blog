@@ -3,6 +3,11 @@ import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import GlobalStyles from "../styles/global-styles";
+import { css } from "@emotion/react";
+import { Header } from "../component/header";
+import tw from "twin.macro";
+import { Footer } from "../component/footer";
+
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -23,7 +28,21 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <GlobalStyles />
-      <Component {...pageProps} />
+      <div
+        css={css`
+          display: grid;
+          grid-template-rows: 1fr auto;
+          grid-template-columns: 100%;
+          min-height: 100vh;
+          width: 100%;
+        `}
+      >
+        <Header />
+        <main css={tw`m-auto my-24 w-full max-w-3xl px-6  md:px-16`}>
+          <Component {...pageProps} />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }

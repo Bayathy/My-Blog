@@ -4,7 +4,7 @@ import type { FC } from "react";
 import tw from "twin.macro";
 
 export const Footer: FC = () => (
-  <footer css={tw`h-16 bg-primary-light dark:bg-primary-dark`}>
+  <footer css={tw`h-16 bg-extra-light dark:bg-black`}>
     <div
       css={tw`m-auto flex h-full max-w-3xl items-center justify-center gap-4 text-3xl dark:text-white`}
     >

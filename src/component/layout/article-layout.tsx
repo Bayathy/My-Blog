@@ -4,7 +4,7 @@ import { Footer } from "../footer";
 import { Header } from "../header";
 import { css } from "@emotion/react";
 
-export const HomeLayout: FC<PropsWithChildren> = ({ children }) => (
+export const ArticleLayout: FC<PropsWithChildren> = ({ children }) => (
   <div
     css={css`
       display: grid;

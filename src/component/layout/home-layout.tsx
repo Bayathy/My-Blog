@@ -3,9 +3,15 @@ import tw from "twin.macro";
 import { Footer } from "../footer";
 import { Header } from "../header";
 import { css } from "@emotion/react";
+import { Sawarabi_Gothic } from "@next/font/google";
 
+const font = Sawarabi_Gothic({
+  weight: "400",
+  subsets: ["latin"],
+});
 export const HomeLayout: FC<PropsWithChildren> = ({ children }) => (
   <div
+    className={font.className}
     css={css`
       display: grid;
       grid-template-rows: 1fr auto;

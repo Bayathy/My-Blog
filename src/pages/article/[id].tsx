@@ -1,10 +1,18 @@
-import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import type { GetStaticPaths, GetStaticProps } from "next";
+import { InferGetStaticPropsType } from "next";
 import { getAllPaths } from "../../utils/cms/get-post-list";
 import { getArticle, GetArticleRes } from "../../utils/cms/get-article";
+import { NextPageWithLayout } from "../_app";
+import { ReactElement } from "react";
+import { ArticleLayout } from "../../component/layout/article-layout";
+import tw from "twin.macro";
+import { css } from "@emotion/react";
 
 type ArticlePageProps = {
   data: GetArticleRes;
 };
+
+type StaticArticlePageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const getPaths = await getAllPaths();
@@ -26,15 +34,32 @@ export const getStaticProps: GetStaticProps<ArticlePageProps> = async ({
     props: {
       data,
     },
+    revalidate: 1000,
   };
 };
 
-// eslint-disable-next-line react/prop-types
-const Article: NextPage<ArticlePageProps> = ({ data }) => (
-  <>
-    {/* eslint-disable-next-line react/prop-types */}
-    <p>{data.body}</p>
-  </>
+const Article: NextPageWithLayout<StaticArticlePageProps> = ({ data }) => (
+  <article>
+    <div css={tw`flex flex-col gap-2 dark:text-white`}>
+      <h1 css={tw`text-2xl`}>{data.title}</h1>
+      <p>{data.createdAt.slice(0, -14)}</p>
+    </div>
+    <div
+      css={[
+        css`
+          margin-top: 2rem;
+        `,
+        tw`dark:text-white`,
+      ]}
+      dangerouslySetInnerHTML={{
+        __html: `${data.body}`,
+      }}
+    />
+  </article>
+);
+
+Article.getLayout = (page: ReactElement) => (
+  <ArticleLayout>{page}</ArticleLayout>
 );
 
 export default Article;

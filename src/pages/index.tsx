@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import { HomeLayout } from "../component/layout/home-layout";
 import type { NextPageWithLayout } from "./_app";
-import type { GetStaticProps } from "next";
+import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import { getAllPaths, getPostList } from "../utils/cms/get-post-list";
 import { GetArticleRes } from "../utils/cms/get-article";
 import { ArticleCard } from "../component/card";
@@ -11,17 +11,20 @@ type HomePageProps = {
   list: Array<GetArticleRes>;
 };
 
+type StaticHomePageProps = InferGetStaticPropsType<typeof getStaticProps>;
+
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
   const list = await getPostList();
   return {
     props: {
       list,
     },
+    revalidate: 1000,
   };
 };
 
 // eslint-disable-next-line react/prop-types
-const Home: NextPageWithLayout<HomePageProps> = ({ list }) => {
+const Home: NextPageWithLayout<StaticHomePageProps> = ({ list }) => {
   return (
     <div css={tw`flex w-full flex-col gap-4`}>
       {/* eslint-disable-next-line react/prop-types */}

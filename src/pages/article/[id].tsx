@@ -40,12 +40,12 @@ export const getStaticProps: GetStaticProps<ArticlePageProps> = async ({
 };
 
 const Article: NextPageWithLayout<StaticArticlePageProps> = ({ data }) => (
-  <article css={tw`prose-sm`}>
+  <article css={tw`dark:text-gray-300`}>
     <div
-      css={tw`flex flex-col gap-4 border-b-2 border-black dark:border-white dark:text-white`}
+      css={tw`flex flex-col gap-4 border-b-2 border-black dark:border-gray-300`}
     >
       <p css={tw`text-xl leading-none`}>{data.createdAt.slice(0, -14)}</p>
-      <h1 css={tw`m-0 leading-none`}>{data.title}</h1>
+      <h1 css={tw`m-0 text-2xl leading-none`}>{data.title}</h1>
       <div
         css={tw`mb-2 w-max rounded-lg bg-secondary-light p-2 leading-none dark:bg-extra-dark`}
       >
@@ -54,10 +54,37 @@ const Article: NextPageWithLayout<StaticArticlePageProps> = ({ data }) => (
     </div>
     <div
       css={[
+        tw`mt-10 `,
         css`
-          margin-top: 2rem;
+          h1 {
+            font-size: 1.8rem;
+            margin: 0.8rem 0;
+          }
+
+          h2 {
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+          }
+
+          h3 {
+            font-size: 1.3rem;
+            margin: 0.3rem 0;
+          }
+
+          p {
+            font-size: 1.2rem;
+            padding: 0 0.5rem;
+          }
+
+          li {
+            padding: 0 0.8rem;
+            list-style: inside;
+          }
+
+          img {
+            margin: auto;
+          }
         `,
-        tw`dark:text-white`,
       ]}
       dangerouslySetInnerHTML={{
         __html: `${data.body}`,

@@ -3,7 +3,6 @@ import type {
   GetStaticProps,
   InferGetStaticPropsType,
 } from "next";
-import {} from "next";
 import { getAllPaths } from "../../utils/cms/get-post-list";
 import { getArticle, GetArticleRes } from "../../utils/cms/get-article";
 import type { NextPageWithLayout } from "../_app";

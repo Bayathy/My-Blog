@@ -9,6 +9,7 @@ import type { NextPageWithLayout } from "../_app";
 import tw from "twin.macro";
 import { css } from "@emotion/react";
 import { NextSeo } from "next-seo";
+import { ArticleCard } from "../../component/card";
 
 type ArticlePageProps = {
   data: GetArticleRes;
@@ -54,21 +55,16 @@ const Article: NextPageWithLayout<StaticArticlePageProps> = ({ data }) => (
         ],
       }}
     />
-    <article css={tw`dark:text-gray-300`}>
-      <div
-        css={tw`flex flex-col gap-4 border-b-2 border-black dark:border-gray-300`}
-      >
-        <p css={tw`text-xl leading-none`}>{data.createdAt.slice(0, -14)}</p>
-        <h1 css={tw`m-0 text-2xl leading-none`}>{data.title}</h1>
-        <div
-          css={tw`mb-2 w-max rounded-lg bg-secondary-light p-2 leading-none dark:bg-secondary-dark`}
-        >
-          <p css={tw`m-0`}>{data.tag}</p>
-        </div>
+    <article css={tw`dark:text-white`}>
+      <div css={tw`border-b-2 border-black pb-7`}>
+        <ArticleCard
+          title={data.title}
+          created_at={new Date(data.createdAt)}
+          tag={data.tag}
+        />
       </div>
       <div
         css={[
-          tw`mt-10 `,
           css`
             h1 {
               font-size: 1.8rem;
@@ -86,16 +82,20 @@ const Article: NextPageWithLayout<StaticArticlePageProps> = ({ data }) => (
             }
 
             p {
-              padding: 0 0.5rem;
             }
 
             li {
-              padding: 0 0.8rem;
               list-style: inside;
             }
 
             img {
               margin: auto;
+              width: 50%;
+            }
+
+            pre {
+              background: black;
+              color: white;
             }
           `,
         ]}

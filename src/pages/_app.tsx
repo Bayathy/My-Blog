@@ -40,7 +40,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         `}
       >
         <Header />
-        <main css={tw`m-auto my-24 w-full max-w-3xl px-6  md:px-16`}>
+        <main css={tw`m-auto my-24 w-full max-w-3xl px-6 `}>
           <Component {...pageProps} />
         </main>
         <Footer />

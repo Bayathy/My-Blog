@@ -16,7 +16,7 @@ export const ArticleCard: FC<ArticleCardProps> = ({
   tag,
 }) => (
   <div
-    css={tw`relative flex flex-col gap-4 rounded-md border-2 bg-white p-4 shadow-md dark:border-none dark:bg-primary-dark dark:text-gray-300`}
+    css={tw`relative flex flex-col gap-2 rounded-2xl border-2 border-black bg-white p-4 shadow-md dark:border-white dark:bg-extra-dark dark:text-white dark:shadow-slate-200`}
   >
     <h1 css={tw`text-xl`}>
       <Link href={`/article/${href}`}>{title}</Link>
@@ -25,7 +25,7 @@ export const ArticleCard: FC<ArticleCardProps> = ({
       {tag.map((index, key) => (
         <span
           key={key}
-          css={tw`rounded-xl bg-secondary-light px-4 py-1 text-sm dark:bg-secondary-dark`}
+          css={tw`rounded-xl border-2 border-black bg-secondary-light px-4 text-sm dark:bg-secondary-dark`}
         >
           {index}
         </span>

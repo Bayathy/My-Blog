@@ -9,6 +9,12 @@ import tw from "twin.macro";
 import { Footer } from "../component/footer";
 import { DefaultSeo } from "next-seo";
 import SEO from "../../next-seo.config";
+import { Sawarabi_Gothic } from "@next/font/google";
+
+const font = Sawarabi_Gothic({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -40,7 +46,10 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         `}
       >
         <Header />
-        <main css={tw`m-auto my-24 w-full max-w-3xl px-6 `}>
+        <main
+          className={font.className}
+          css={tw`m-auto my-24 w-full max-w-3xl px-6`}
+        >
           <Component {...pageProps} />
         </main>
         <Footer />

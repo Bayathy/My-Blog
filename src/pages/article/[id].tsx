@@ -46,6 +46,7 @@ const Article: NextPageWithLayout<StaticArticlePageProps> = ({ data }) => (
     <NextSeo
       openGraph={{
         url: `https://blog.bayathy.com/artcle/${data.id}`,
+        description: data.title,
         title: data.title,
         images: [
           {

@@ -8,6 +8,8 @@ const ThemeToggleButton = () => {
   const [isDarkMode, toggleDarkMode] = useDarkMode();
   return (
     <button
+      type="button"
+      aria-label="toggle color theme"
       css={tw`w-10 rounded-xl border-2 border-black bg-extra-light p-1 dark:border-white dark:bg-extra-dark`}
       onClick={() => toggleDarkMode(!isDarkMode)}
     >
@@ -30,6 +32,8 @@ export const Header: FC = () => {
         <h1 css={tw`text-2xl dark:text-white`}>Bayathy</h1>
         <div css={tw`flex gap-2`}>
           <button
+            type="button"
+            aria-label="back home"
             css={tw`w-10 rounded-xl border-2 border-black bg-extra-light p-1 dark:border-white dark:bg-extra-dark`}
             onClick={() => {
               router.push("/");

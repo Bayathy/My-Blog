@@ -24,18 +24,27 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
 // eslint-disable-next-line react/prop-types
 const Home: NextPageWithLayout<StaticHomePageProps> = ({ list }) => {
   return (
-    <div css={tw`flex w-full flex-col gap-4`}>
-      {/* eslint-disable-next-line react/prop-types */}
-      {list.map(({ title, tag, createdAt, id }) => (
-        <ArticleCard
-          key={id}
-          title={title}
-          created_at={new Date(createdAt)}
-          href={id}
-          tag={tag}
-        />
-      ))}
-    </div>
+    <>
+      <div css={tw`my-4 w-full border-b-2 border-black`}>
+        <div
+          css={tw`my-1 w-max rounded-xl border-2 border-black bg-secondary-light px-2 py-1 dark:bg-secondary-dark dark:text-white`}
+        >
+          <h2 css={tw`text-2xl`}>Article</h2>
+        </div>
+      </div>
+      <div css={tw`flex w-full flex-col gap-4`}>
+        {/* eslint-disable-next-line react/prop-types */}
+        {list.map(({ title, tag, createdAt, id }) => (
+          <ArticleCard
+            key={id}
+            title={title}
+            created_at={new Date(createdAt)}
+            href={id}
+            tag={tag}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 

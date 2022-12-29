@@ -1,1 +1,1 @@
-My Next.js template
+My blog

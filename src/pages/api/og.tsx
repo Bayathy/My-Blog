@@ -19,7 +19,7 @@ export default (req: NextRequest) => {
       (
         <div
           style={{
-            background: "#D3CEDF",
+            background: "#F7EDDE",
             width: "100%",
             height: "100%",
             display: "flex",
@@ -32,6 +32,7 @@ export default (req: NextRequest) => {
             style={{
               position: "relative",
               fontSize: "60px",
+              padding: "0 1rem",
               width: "90%",
               height: "80%",
               background: "white",
@@ -40,6 +41,9 @@ export default (req: NextRequest) => {
               textAlign: "center",
               alignItems: "center",
               justifyContent: "center",
+              overflowWrap: "break-word",
+              wordWrap: "break-word",
+              border: "solid black 10px",
             }}
           >
             {title}

@@ -32,7 +32,7 @@ export const Header: FC = () => {
           <button
             css={tw`w-10 rounded-xl border-2 border-black bg-extra-light p-1 dark:border-white dark:bg-extra-dark`}
             onClick={() => {
-              router.push("/test");
+              router.push("/");
             }}
           >
             <Icon

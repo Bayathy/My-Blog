@@ -25,7 +25,7 @@ export const ArticleCard: FC<ArticleCardProps> = ({
       {tag.map((index, key) => (
         <span
           key={key}
-          css={tw`rounded-xl border-2 border-black bg-secondary-light px-4 text-sm dark:bg-secondary-dark`}
+          css={tw`rounded-xl border-2 border-black bg-secondary-light px-4 text-sm dark:border-white dark:bg-secondary-dark`}
         >
           {index}
         </span>

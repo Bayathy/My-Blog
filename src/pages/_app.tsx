@@ -9,12 +9,9 @@ import tw from "twin.macro";
 import { Footer } from "../component/footer";
 import { DefaultSeo } from "next-seo";
 import SEO from "../../next-seo.config";
-import { Sawarabi_Gothic } from "@next/font/google";
+import localfont from "@next/font/local";
 
-const font = Sawarabi_Gothic({
-  weight: "400",
-  subsets: ["latin"],
-});
+const font = localfont({ src: "./subset-noto.woff2" });
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {

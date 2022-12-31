@@ -7,7 +7,6 @@ import { getAllPaths } from "../../utils/cms/get-post-list";
 import { getArticle, GetArticleRes } from "../../utils/cms/get-article";
 import type { NextPageWithLayout } from "../_app";
 import tw from "twin.macro";
-import { css } from "@emotion/react";
 import { NextSeo } from "next-seo";
 import { ArticleCard } from "../../component/card";
 
@@ -57,7 +56,7 @@ const Article: NextPageWithLayout<StaticArticlePageProps> = ({ data }) => (
       }}
     />
     <article css={tw`dark:text-white`}>
-      <div css={tw`border-b-2 border-black pb-7`}>
+      <div css={tw`border-b-2 border-black pb-7 dark:border-white`}>
         <ArticleCard
           title={data.title}
           created_at={new Date(data.createdAt)}
@@ -66,39 +65,12 @@ const Article: NextPageWithLayout<StaticArticlePageProps> = ({ data }) => (
       </div>
       <div
         css={[
-          css`
-            h1 {
-              font-size: 1.8rem;
-              margin: 0.8rem 0;
-            }
-
-            h2 {
-              font-size: 1.5rem;
-              margin: 0.5rem 0;
-            }
-
-            h3 {
-              font-size: 1.3rem;
-              margin: 0.3rem 0;
-            }
-
-            p {
-            }
-
-            li {
-              list-style: inside;
-            }
-
-            img {
-              margin: auto;
-              width: 50%;
-            }
-
-            pre {
-              background: black;
-              color: white;
-            }
-          `,
+          tw`[&>h1]:my-3 [&>h1]:text-3xl`,
+          tw`[&>h2]:my-4 [&>h2]:border-l-8 [&>h2]:border-black [&>h2]:border-l-secondary-light [&>h2]:px-2 [&>h2]:text-2xl [&>h2]:dark:border-l-secondary-dark`,
+          tw`[&>h3]:text-xl`,
+          tw`[&>l1]:list-inside`,
+          tw`[&>img]:m-auto`,
+          tw`[&>pre]:bg-black [&>pre]:text-white`,
         ]}
         dangerouslySetInnerHTML={{
           __html: `${data.body}`,

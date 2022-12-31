@@ -11,10 +11,6 @@ module.exports = {
         "extra-light": "#FFFFFF",
         "extra-dark": "#2C2C2C",
       },
-      fontFamily: {
-        noto: [`var(--font-noto)`],
-        sawarabi: ["var(--font-sawarabi)"],
-      },
     },
   },
   darkMode: "class",

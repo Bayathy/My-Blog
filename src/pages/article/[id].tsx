@@ -6,7 +6,7 @@ import type {
 import { getAllPaths } from "../../utils/cms/get-post-list";
 import { getArticle, GetArticleRes } from "../../utils/cms/get-article";
 import type { NextPageWithLayout } from "../_app";
-import tw from "twin.macro";
+import tw, { css } from "twin.macro";
 import { NextSeo } from "next-seo";
 import { ArticleCard } from "../../component/card";
 
@@ -63,11 +63,16 @@ const Article: NextPageWithLayout<StaticArticlePageProps> = ({ data }) => (
       />
       <div
         css={[
+          css`
+            img {
+              margin: auto;
+              width: 50%;
+            }
+          `,
           tw`[&>h1]:my-3 [&>h1]:text-3xl`,
           tw`[&>h2]:my-4 [&>h2]:border-l-8 [&>h2]:border-black [&>h2]:border-l-secondary-light [&>h2]:px-2 [&>h2]:text-2xl [&>h2]:dark:border-l-secondary-dark`,
           tw`[&>h3]:my-2 [&>h3]:border-b-2 [&>h3]:border-black [&>h3]:text-xl [&>h3]:dark:border-white`,
           tw`[&>l1]:list-inside`,
-          tw`[&>img]:m-auto`,
           tw`[&>pre]:bg-black [&>pre]:text-white`,
         ]}
         dangerouslySetInnerHTML={{

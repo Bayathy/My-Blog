@@ -3,6 +3,7 @@ import type { ReactElement, ReactNode } from "react";
 import { css } from "@emotion/react";
 import localfont from "@next/font/local";
 import Head from "next/head";
+// eslint-disable-next-line import/order
 import { DefaultSeo } from "next-seo";
 import tw from "twin.macro";
 

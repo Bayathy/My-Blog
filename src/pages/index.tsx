@@ -4,6 +4,7 @@ import { ArticleCard } from "../component/card";
 import { getPostList } from "../utils/cms/get-post-list";
 
 import type { NextPageWithLayout } from "./_app";
+// eslint-disable-next-line import/order
 import type { GetArticleRes } from "../utils/cms/get-article";
 import type { GetStaticProps, InferGetStaticPropsType } from "next";
 

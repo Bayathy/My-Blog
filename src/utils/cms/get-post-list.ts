@@ -1,5 +1,6 @@
 import { client } from "./init";
-import { GetArticleRes } from "./get-article";
+
+import type { GetArticleRes } from "./get-article";
 
 type GetListRes = {
   contents: Array<GetArticleRes>;

@@ -1,9 +1,11 @@
-import type { NextPageWithLayout } from "./_app";
-import type { GetStaticProps, InferGetStaticPropsType } from "next";
-import { getPostList } from "../utils/cms/get-post-list";
-import { GetArticleRes } from "../utils/cms/get-article";
-import { ArticleCard } from "../component/card";
 import tw from "twin.macro";
+
+import { ArticleCard } from "../component/card";
+import { getPostList } from "../utils/cms/get-post-list";
+
+import type { NextPageWithLayout } from "./_app";
+import type { GetArticleRes } from "../utils/cms/get-article";
+import type { GetStaticProps, InferGetStaticPropsType } from "next";
 
 type HomePageProps = {
   list: Array<GetArticleRes>;

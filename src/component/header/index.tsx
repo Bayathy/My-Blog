@@ -1,8 +1,10 @@
 import type { FC } from "react";
-import tw from "twin.macro";
+
 import { Icon } from "@iconify/react";
-import { useDarkMode } from "../../utils/use-dark-mode";
 import { useRouter } from "next/router";
+import tw from "twin.macro";
+
+import { useDarkMode } from "../../utils/use-dark-mode";
 
 const ThemeToggleButton = () => {
   const [isDarkMode, toggleDarkMode] = useDarkMode();

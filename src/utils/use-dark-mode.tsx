@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import type { Dispatch, SetStateAction } from "react";
 
 export const useDarkMode = (): [boolean, Dispatch<SetStateAction<boolean>>] => {

@@ -1,14 +1,17 @@
+import { NextSeo } from "next-seo";
+import tw, { css } from "twin.macro";
+
+import { ArticleCard } from "../../component/card";
+import { getArticle } from "../../utils/cms/get-article";
+import { getAllPaths } from "../../utils/cms/get-post-list";
+
+import type { GetArticleRes } from "../../utils/cms/get-article";
+import type { NextPageWithLayout } from "../_app";
 import type {
   GetStaticPaths,
   GetStaticProps,
   InferGetStaticPropsType,
 } from "next";
-import { getAllPaths } from "../../utils/cms/get-post-list";
-import { getArticle, GetArticleRes } from "../../utils/cms/get-article";
-import type { NextPageWithLayout } from "../_app";
-import tw, { css } from "twin.macro";
-import { NextSeo } from "next-seo";
-import { ArticleCard } from "../../component/card";
 
 type ArticlePageProps = {
   data: GetArticleRes;

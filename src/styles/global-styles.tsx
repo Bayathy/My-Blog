@@ -1,11 +1,11 @@
 import type { FC } from "react";
+
 import { Global } from "@emotion/react";
-import tw, { css, GlobalStyles as BaseStyles, theme } from "twin.macro";
+import tw, { css, GlobalStyles as BaseStyles } from "twin.macro";
 
 const customStyles = css([
   {
     body: {
-      WebkitTapHighlightColor: theme`colors.purple.500`,
       ...tw`bg-primary-light antialiased dark:bg-primary-dark`,
     },
   },

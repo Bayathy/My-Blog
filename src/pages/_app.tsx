@@ -1,15 +1,18 @@
 import type { ReactElement, ReactNode } from "react";
+
+import { css } from "@emotion/react";
+import localfont from "@next/font/local";
+import Head from "next/head";
+import { DefaultSeo } from "next-seo";
+import tw from "twin.macro";
+
+import SEO from "../../next-seo.config";
+import { Footer } from "../component/footer";
+import { Header } from "../component/header";
+import GlobalStyles from "../styles/global-styles";
+
 import type { NextPage } from "next";
 import type { AppProps } from "next/app";
-import Head from "next/head";
-import GlobalStyles from "../styles/global-styles";
-import { css } from "@emotion/react";
-import { Header } from "../component/header";
-import tw from "twin.macro";
-import { Footer } from "../component/footer";
-import { DefaultSeo } from "next-seo";
-import SEO from "../../next-seo.config";
-import localfont from "@next/font/local";
 
 const font = localfont({ src: "./subset-noto.woff2" });
 

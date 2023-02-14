@@ -1,6 +1,7 @@
 import type { FC } from "react";
-import tw from "twin.macro";
+
 import Link from "next/link";
+import tw from "twin.macro";
 
 export type ArticleCardProps = {
   title: string;

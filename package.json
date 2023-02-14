@@ -30,7 +30,7 @@
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
     "@emotion/babel-plugin": "^11.10.5",
-    "@iconify/react": "^4.0.1",
+    "@iconify/react": "^4.1.0",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "18.13.0",
     "@types/react": "18.0.28",

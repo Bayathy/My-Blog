@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+
 import { NextSeo } from "next-seo";
 import tw, { css } from "twin.macro";
 
@@ -58,31 +60,33 @@ const Article: NextPageWithLayout<StaticArticlePageProps> = ({ data }) => (
         ],
       }}
     />
-    <article css={tw`dark:text-white`}>
-      <ArticleCard
-        title={data.title}
-        created_at={new Date(data.createdAt)}
-        tag={data.tag}
-      />
-      <div
-        css={[
-          css`
-            img {
-              margin: auto;
-              width: 50%;
-            }
-          `,
-          tw`[&>h1]:my-3 [&>h1]:text-3xl`,
-          tw`[&>h2]:my-4 [&>h2]:border-l-8 [&>h2]:border-black [&>h2]:border-l-secondary-light [&>h2]:px-2 [&>h2]:text-2xl [&>h2]:dark:border-l-secondary-dark`,
-          tw`[&>h3]:my-2 [&>h3]:border-b-2 [&>h3]:border-black [&>h3]:text-xl [&>h3]:dark:border-white`,
-          tw`[&>l1]:list-inside`,
-          tw`[&>pre]:bg-black [&>pre]:text-white`,
-        ]}
-        dangerouslySetInnerHTML={{
-          __html: `${data.body}`,
-        }}
-      />
-    </article>
+    <Suspense fallback={<p>isLoading</p>}>
+      <article css={tw`dark:text-white`}>
+        <ArticleCard
+          title={data.title}
+          created_at={new Date(data.createdAt)}
+          tag={data.tag}
+        />
+        <div
+          css={[
+            css`
+              img {
+                margin: auto;
+                width: 50%;
+              }
+            `,
+            tw`[&>h1]:my-3 [&>h1]:text-3xl`,
+            tw`[&>h2]:my-4 [&>h2]:border-l-8 [&>h2]:border-black [&>h2]:border-l-secondary-light [&>h2]:px-2 [&>h2]:text-2xl [&>h2]:dark:border-l-secondary-dark`,
+            tw`[&>h3]:my-2 [&>h3]:border-b-2 [&>h3]:border-black [&>h3]:text-xl [&>h3]:dark:border-white`,
+            tw`[&>l1]:list-inside`,
+            tw`[&>pre]:bg-black [&>pre]:text-white`,
+          ]}
+          dangerouslySetInnerHTML={{
+            __html: `${data.body}`,
+          }}
+        />
+      </article>
+    </Suspense>
   </>
 );
 

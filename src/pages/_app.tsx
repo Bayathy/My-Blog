@@ -15,7 +15,7 @@ import GlobalStyles from "../styles/global-styles";
 import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 
-const font = localfont({ src: "./subset-noto.woff2" });
+const font = localfont({ src: "./subset-noto.woff2", display: "swap" });
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {

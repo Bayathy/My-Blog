@@ -38,7 +38,7 @@
     "babel-loader": "^9.1.2",
     "babel-plugin-macros": "^3.1.0",
     "eslint": "8.36.0",
-    "eslint-config-bayathy": "^1.0.34",
+    "eslint-config-bayathy": "^1.0.38",
     "eslint-plugin-tailwindcss": "^3.10.1",
     "husky": "^8.0.3",
     "prettier": "^2.8.4",
